@@ -11,13 +11,12 @@ def input_time(num):
     
     # ジョブごとの処理時間を入力するためのデータフレームを作成
     data = {
-        'ジョブ': [f'ジョブ {i+1}' for i in range(num)],
-        '機械1での処理時間': [0] * num,
-        '機械2での処理時間': [0] * num,
+        "ジョブ": [f"ジョブ {i+1}" for i in range(num)],
+        "機械1での処理時間": [0] * num,
+        "機械2での処理時間": [0] * num,
     }
 
     # データフレームを表示して編集可能にする
     df = pd.DataFrame(data)
-    #edited_df = st.data_editor(df, num_rows="dynamic")
     return df
     
