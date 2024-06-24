@@ -16,12 +16,12 @@ def page_main():
     ## データの入力
     num = input_jobs()  # ジョブ数を入力
     st.write("")
-    st.write('各ジョブの各機械での処理時間を入力')
+    st.write("各ジョブの各機械での処理時間を入力")
     df = input_time(num)  # ジョブ数に応じて処理時間を記入する表を作成
     edited_df = st.data_editor(df, num_rows="dynamic")  # 編集されたデータフレームを表示
     p = edited_df.T.values.tolist()
     ## 最適スケジュールを計算して結果を表示
-    if st.button('計算を実行してガントチャートを表示する', key = "button"):
+    if st.button("計算を実行してガントチャートを表示する", key = "button"):
         optimal_schedule = johnson_rule(num,p[1:])
         gantt_chart(num,optimal_schedule, p[1:])
 
